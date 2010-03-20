@@ -6,7 +6,7 @@ module Globalize2Paperclipped
     
     module ClassMethods
       def scope_locale(locale, &block)
-        with_scope(:find => { :joins => "INNER JOIN asset_translations on asset_translations.asset_id = assets.id", :conditions => ['asset_translations.locale = ?', locale] }) do
+        with_scope(:find => { :joins => "INNER JOIN asset_translations on asset_translations.asset_id = assets.id", :conditions => ['asset_translations.locale = ?', locale.to_s] }) do
           yield
         end
       end      

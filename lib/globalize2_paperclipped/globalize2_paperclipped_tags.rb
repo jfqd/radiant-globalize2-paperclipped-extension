@@ -5,14 +5,14 @@ module Globalize2Paperclipped
     class TagError < StandardError; end
     
     tag 'if_assets_with_globalize' do |tag|
-      result = Asset.scope_locale(I18n.locale) do
+      result = Asset.scope_locale(I18n.locale.to_s) do
         send('tag:if_assets_without_globalize', tag)
       end
       result
     end
     
     tag 'unless_assets_with_globalize' do |tag|
-      result = Asset.scope_locale(I18n.locale) do
+      result = Asset.scope_locale(I18n.locale.to_s) do
         send('tag:unless_assets_without_globalize', tag)
       end
       result
@@ -21,7 +21,7 @@ module Globalize2Paperclipped
     tag 'assets:each_with_globalize' do |tag|
       with_translated_locales = tag.attr['locale'] == 'false' ? false : true
       if with_translated_locales
-        result = Asset.scope_locale(I18n.locale) do
+        result = Asset.scope_locale(I18n.locale.to_s) do
           send('tag:assets:each_without_globalize', tag)
         end
       else
