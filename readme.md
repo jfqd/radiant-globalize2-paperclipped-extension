@@ -6,7 +6,7 @@ About
 
 An extension by [Aissac][aissac] that helps translating [Radiant Paperclipped][pc] Assets using [Radiant Globalize2 Extension][arg2].
 
-Requires Radiant >= 0.8. Tested on Radiant 0.9 RC1.
+Requires Radiant >= 0.8. Tested on Radiant 0.9.1
 
 Features
 ---
